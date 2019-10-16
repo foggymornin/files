@@ -1,0 +1,60 @@
+nclude <stdlib.h>
+
+int        countargv(int argc, char **argv)
+{
+	    int i;
+		    char **p;
+			    int n;
+
+				    n = 0;
+					    i = 0;
+
+						    p = argv;
+							    while (argc > 1)
+									    {
+											        while (**argv)
+														        {
+																	            n++;
+																				            argv[i]++;
+																							        }
+																									        i++;
+																											        argv = p;
+																													    }
+																														    return (n);
+}
+
+char    *ft_concat_params(int argc, char **argv)
+{
+	    char *a;
+		    char **p;
+			    int i;
+				    int j;
+
+					    j = 0;
+						    i = 1;
+							    p = argv;
+								    a = malloc(sizeof(char) * (countargv(argc, argv) + 1));
+									    while (argc - 1)
+											    {
+													        if (!*argv[i])
+																        {
+																			            i++;
+																						            argc--;
+																									            argv = p;
+																												        }
+																														        a[j] = *argv[i];
+																																        argv[i]++;
+																																		        j++;
+																																				    }
+																																					    a[j] = '\0';
+																																						    return(a);
+}
+
+#include <stdio.h>
+
+int        main()
+{
+	    char t[5][10] = {"hello", "word", "fuck you"};
+		    printf("%s\n", ft_concat_params(4,  t));
+			    return (0);
+}
