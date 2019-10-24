@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:25:42 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/20 13:00:54 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/24 13:25:45 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ char	*ft_strtrim(char const *s, char const *set)
 	j = last(s, set);
 	if (i > j)
 		return ("\0");
-	ss = malloc(sizeof(char) * (j - i) + 2);
+	if (!(ss = malloc(sizeof(char) * (j - i) + 2)))
+		return (NULL);
 	while (i <= j)
 	{
 		ss[k++] = s[i++];

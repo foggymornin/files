@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 19:33:23 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/20 13:00:33 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/24 13:21:18 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int 	main(void)
 {
-	//char p[] = "aaaaaabbbbccccccccc";
-	char s[15];
-	printf("%s\n", ft_strtrim(NULL, s));
+	char p[] = "    ";
+	//char s[15];
+	printf("%s\n", ft_strtrim(p, " "));
 	return 0;
 }

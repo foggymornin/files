@@ -12,19 +12,17 @@
 
 #include <string.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s, const void *ss, size_t n)
 {
-	unsigned char *a;
-	unsigned char *aa;
+	unsigned char *p;
+	unsigned char *pp;
 
-	a = (unsigned char *)s1;
-	aa = (unsigned char *)s2;
-	while (n--)
+	p = (unsigned char *)s;
+	pp = (unsigned char *)ss;
+	while (*p == *pp && --n)
 	{
-		if (*a != *aa)
-			return (*a - *aa);
-		a++;
-		aa++;
+		p++;
+		pp++;
 	}
-	return (0);
+	return ((int)(*p - *pp));
 }

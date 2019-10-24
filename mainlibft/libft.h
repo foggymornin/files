@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 12:00:06 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/20 15:08:39 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/21 13:04:42 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct	s_list
 {
 		void			*content;
 			size_t			content_size;
 				struct s_list	*next;
 }				t_list;
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_split(char const *s, char c);
 char			*ft_strtrim(char const *s, const char *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);

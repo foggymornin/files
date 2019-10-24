@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:01:06 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/19 13:43:30 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/24 12:22:17 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(void)
 {
 
-	char const s[] = "maroune, the god";
-	printf("%s\n", ft_substr(s, 'g', 3));
+	char const s[] = "i just want this part #############";
+	printf("%s\n", ft_substr(s, 400, 20));
 	return 0;
 }

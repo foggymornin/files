@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:54:15 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/19 15:23:08 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/24 13:05:43 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int main(void)
 {
-	char *s = "hello";
-	char *ss = "";
+	char s[] = "hello";
+	char ss[] = "god";
+	s[0] = 0;
+	ss[0] = 0;
 	printf("%s\n", ft_strjoin(s, ss));
 	return 0;
 }

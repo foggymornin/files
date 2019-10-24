@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:59:46 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/17 14:41:01 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/23 18:14:41 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t		ft_strlcat(char *restrict to, const char *restrict from, size_t n)
 	while (to[i])
 		i++;
 	if (i >= n)
-		l = n + ft_strlen(from);
+		return (n + ft_strlen(to));
 	else
 		l = i + ft_strlen(from);
 	while (i < n - 1 && from[j])

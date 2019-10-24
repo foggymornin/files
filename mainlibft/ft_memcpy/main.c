@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:00:50 by mafajat           #+#    #+#             */
-/*   Updated: 2019/10/16 10:53:24 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/10/22 13:42:26 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		main(void)
 
 	char r1[20] = "Marouane fajat";
 	char r2[6] = "foggy";
-	printf("%s\n", memcpy(ptr1, ptr2, 20));
-	printf("%s\n", ft_memcpy(r1, r2, 20));
+	//printf("%s\n", memcpy(ptr1, ptr2, 20));
+	//printf("%s\n", ft_memcpy(r1, r2, 20));
+	printf("%s\n", memcpy(r1, (void *)0, 20));
+	//printf("%s\n", ft_memcpy((void *)0, (void *)0, 20));
 }
