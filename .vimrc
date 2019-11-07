@@ -1,0 +1,9 @@
+set number 
+set showcmd
+set cursorline
+set wildmenu
+set showmatch
+set incsearch
+set hlsearch
+:syntax on
+set mouse=a
