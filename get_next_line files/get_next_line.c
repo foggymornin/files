@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:19:13 by mafajat           #+#    #+#             */
-/*   Updated: 2019/11/07 16:18:40 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/11/09 17:02:04 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,30 @@
 #include <string.h>
 int		get_next_line(int fd, char **l)
 {
-	char 		*dup;
 	char 		*part;
-	static char *s;
-	int			i;
-	static int	r;
+	static char *s[1025];
+	int			r;
 
 	part = (char *)calloc(sizeof(char), BUFFER_SIZE + 1);
 	r = read(fd, part, BUFFER_SIZE);
-	dup = s;
-	s = ft_strjoin(dup, part);
-	i = searchnl(s);
-	if (i)
+	if (r < 0)
+		return (-1);
+	if (!s[fd])
+		s[fd] = strdup(part);
+	else 
+		s[fd] = ft_strjoin(s[fd], part);
+	free(part);
+	if (searchnl(s[fd]))
 	{
-		*l = dupnl(s);
-		s = cut(s, i);
+		*l = dupnl(s[fd]);
+		s[fd] = cut(s[fd], searchnl(s[fd]));
 		return(1);
 	}
-	return (get_next_line(fd, l));
+	if (r == 0)
+	{
+		*l = s[fd];
+		//free(s[fd]);
+		s[fd] = NULL;
+	}
+	return (r ? get_next_line(fd, l) : r);
 }

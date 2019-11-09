@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:35:22 by mafajat           #+#    #+#             */
-/*   Updated: 2019/11/07 16:20:40 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/11/09 17:02:06 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char 	*cut(char *s, int i)
 		i++;
 	}
 	ss[n] = 0;
+	free(s);
 	return (ss);
 }
 char	*dupnl(char *s)
@@ -39,7 +40,7 @@ char	*dupnl(char *s)
 	char	*ss;
 
 	i = 0;
-	while (s[i] != '\n')
+	while (s[i] != '\n' && s[i])
 		i++;
 	ss = (char *)malloc(sizeof(char) * (i + 1));
 	if (!ss)
@@ -69,6 +70,7 @@ int 	searchnl(char *s)
 		}
 		i++;
 	}
+
 	return (0);
 }
 char	*ft_strjoin(char *s1, char *s2)
@@ -77,9 +79,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		j;
 	int		k;
 	char	*s;
-	
-	if (!s1)
-		return (strdup(s2));
+
 	k = ft_strlen(s1) + ft_strlen(s2);
 	if (!(s = malloc(sizeof(char) * (k + 1))))
 		return (NULL);
@@ -97,6 +97,7 @@ char	*ft_strjoin(char *s1, char *s2)
 				s[i++] = s2[j++];
 	}
 	s[i] = 0;
+	free(s1);
 	return (s);
 }
 size_t		ft_strlen(char *s)
