@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 15:20:43 by mafajat           #+#    #+#             */
-/*   Updated: 2019/11/09 16:13:28 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/11/10 17:53:17 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main()
 			printf("%s\n", *l);
 				free(*l);
 		}
-		
-		printf("%s\n", *l);
+	//printf("%s", *l);
+	//	printf("%s\n", *l);
 	//	free(*l);
 		//while(get_next_line(fd, l));
 }

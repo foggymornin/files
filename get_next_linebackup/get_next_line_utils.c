@@ -6,7 +6,7 @@
 /*   By: mafajat <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:35:22 by mafajat           #+#    #+#             */
-/*   Updated: 2019/11/09 17:02:06 by mafajat          ###   ########.fr       */
+/*   Updated: 2019/11/10 16:06:15 by mafajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*dupnl(char *s)
 	if (!ss)
 		return (NULL);
 	i = 0;
-	while (s[i] != '\n')
+	while (s[i] != '\n' && s[i])
 	{
 		ss[i] = s[i];
 		i++;
@@ -70,7 +70,6 @@ int 	searchnl(char *s)
 		}
 		i++;
 	}
-
 	return (0);
 }
 char	*ft_strjoin(char *s1, char *s2)
